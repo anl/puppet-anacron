@@ -1,16 +1,18 @@
 anacron
-
-This is the anacron module.
+-------
+Install and configure anacron.  Tested on/supports Ubuntu 12.04.
 
 License
 -------
-
+Apache License, Version 2.0.
 
 Contact
 -------
-
+See below.
 
 Support
 -------
 
-Please log tickets and issues at our [Projects site](http://projects.example.com)
+Please log tickets and issues on
+[GitHub](https://github.com/anl/puppet-anacron).
+
