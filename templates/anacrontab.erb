@@ -10,10 +10,10 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 7 10	cron.weekly	 nice run-parts --report /etc/cron.weekly
 @monthly		 15   cron.monthly nice run-parts --report /etc/cron.monthly
 <% end -%>
-<% jobs.each do |id,attrs| -%>
+<% jobs.keys.sort.each do |id| -%>
 
-<% unless attrs['comment'].nil? -%>
-# <%= attrs['comment'] %>
+<% if jobs[id].key?('comment') -%>
+# <%= jobs[id]['comment'] %>
 <% end -%>
-<%= attrs['period'] %> <%= attrs['delay'] %> <%= id %> <%= attrs['command'] %>
+<%= jobs[id]['period'] %> <%= jobs[id]['delay'] %> <%= id %> <%= jobs[id]['command'] %>
 <% end -%>
