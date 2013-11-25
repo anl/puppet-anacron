@@ -4,16 +4,16 @@
 
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-<% if default_jobs %>
+<% if @default_jobs %>
 # These replace cron's entries
 1 5	cron.daily      nice run-parts --report /etc/cron.daily
 7 10	cron.weekly	 nice run-parts --report /etc/cron.weekly
 @monthly		 15   cron.monthly nice run-parts --report /etc/cron.monthly
 <% end -%>
-<% jobs.keys.sort.each do |id| -%>
+<% @jobs.keys.sort.each do |id| -%>
 
-<% if jobs[id].key?('comment') -%>
-# <%= jobs[id]['comment'] %>
+<% if @jobs[id].key?('comment') -%>
+# <%= @jobs[id]['comment'] %>
 <% end -%>
-<%= jobs[id]['period'] %> <%= jobs[id]['delay'] %> <%= id %> <%= jobs[id]['command'] %>
+<%= @jobs[id]['period'] %> <%= @jobs[id]['delay'] %> <%= id %> <%= @jobs[id]['command'] %>
 <% end -%>
