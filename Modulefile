@@ -1,5 +1,5 @@
 name    'anl-anacron'
-version '0.1.0'
+version '0.1.2'
 source 'https://github.com/anl/puppet-anacron.git'
 author 'anl'
 license 'Apache License, Version 2.0'
